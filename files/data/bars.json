@@ -1,0 +1,167 @@
+[
+  {
+    "id": "aloha-chocolate-chip-cookie-dough",
+    "upc": "842096106118",
+    "brand": "ALOHA",
+    "product_line": "Protein Bars",
+    "flavor": "Chocolate Chip Cookie Dough",
+    "name_variants": ["Chocolate Chip Cookie Dough - Protein Bars"],
+    "serving": {
+      "serving_size_text": "1 Bar (56g)",
+      "serving_size_g": 56,
+      "bars_per_serving": 1,
+      "bars_per_serving_inferred": false,
+      "servings_per_container": 12
+    },
+    "nutrition": {
+      "calories": 240,
+      "protein_g": 14,
+      "fat_g": 11,
+      "sat_fat_g": 2.5,
+      "trans_fat_g": 0,
+      "carbs_g": 25,
+      "fiber_g": 10,
+      "sugars_g": 5,
+      "added_sugars_g": 4,
+      "sugar_alcohol_g": null,
+      "sodium_mg": 105
+    },
+    "ingredients_text": "Protein Blend* (Brown Rice Protein*, Pumpkin Seed Protein*), Sunflower Seed Butter* (Roasted Sunflower Seeds*, Sunflower Oil*), Tapioca Fiber*, Tapioca Syrup*, Chocolate Chips* (Chocolate*, Cane Sugar*, Cocoa Butter*, Vanilla Extract*), Vegetable Glycerin*, Brown Sugar*, Cocoa Nibs*, Brown Rice Crisps* (Brown Rice*, Brown Rice Syrup*, Salt), Natural Flavor*, Vanilla Extract*, Sea Salt, Sunflower Lecithin*",
+    "allergen_statement": {
+      "contains_text": null,
+      "facility_text": "Manufactured in a facility that also processes tree nuts, fish, milk, peanuts, sesame, soy and wheat"
+    },
+    "claims": {
+      "usda_organic": { "value": true, "source": "brand_page", "note": "Page states USDA Organic Certified. Confirm seal on package." },
+      "non_gmo_project_verified": { "value": true, "source": "brand_page", "note": "Brand FAQ says Non-GMO Project Verified. Confirm seal on package." },
+      "labeled_gluten_free": { "value": true, "source": "brand_page", "note": "Page says gluten free, third-party tested under 5ppm. Confirm claim on package." }
+    },
+    "claims_raw": [
+      "Certified vegan (brand FAQ)",
+      "Certified B Corporation",
+      "Always free from soy, dairy, gluten, GMOs, stevia, sugar alcohol sweeteners (brand claim)"
+    ],
+    "sources": [
+      { "type": "brand_text", "url": "https://aloha.com/products/chocolate-chip-cookie-dough-protein-bar", "retrieved": "2026-10-05", "note": "Ingredients, claims, price" },
+      { "type": "label_image", "url": null, "retrieved": "2026-10-05", "note": "Nutrition panel image supplied by user (white-on-transparent PNG, flattened onto dark background to read)" }
+    ],
+    "verification": { "status": "draft", "verified_by_human": false, "verified_date": null, "fields_checked": [], "notes": "Pilot record. Not yet human-verified." },
+    "image": { "source": "none", "url": null },
+    "review_flags": [
+      "UPC taken from the product image file name. Confirm against package barcode.",
+      "Page calls the bar nut-free, but facility statement lists tree nuts and peanuts.",
+      "Page tag 'sunflower-oil-update' suggests a recent formulation change (inference). Compare package.",
+      "Ingredients from brand page text only. No ingredient-list image checked."
+    ]
+  },
+  {
+    "id": "clif-builders-chocolate-peanut-butter",
+    "upc": null,
+    "brand": "CLIF",
+    "product_line": "Builders",
+    "flavor": "Chocolate Peanut Butter",
+    "name_variants": [
+      "Chocolatey Peanut Butter (brand site)",
+      "Builders Chocolate Peanut Butter Bar (Whole Foods)"
+    ],
+    "serving": {
+      "serving_size_text": "1 bar (68g)",
+      "serving_size_g": 68,
+      "bars_per_serving": 1,
+      "bars_per_serving_inferred": false,
+      "servings_per_container": null
+    },
+    "nutrition": {
+      "calories": 290,
+      "protein_g": 20,
+      "fat_g": 11,
+      "sat_fat_g": 6,
+      "trans_fat_g": 0,
+      "carbs_g": 29,
+      "fiber_g": 2,
+      "sugars_g": 17,
+      "added_sugars_g": 17,
+      "sugar_alcohol_g": null,
+      "sodium_mg": 330
+    },
+    "ingredients_text": "SOY PROTEIN ISOLATE, CANE SYRUP*, CANE SUGAR*, BROWN RICE SYRUP*, PALM KERNEL OIL, VEGETABLE GLYCERIN, SOY FLOUR*, RICE FLOUR*, CHICORY FIBER SYRUP, PEANUTS*, NATURAL FLAVORS, PEANUT BUTTER*, COCOA BUTTER, COCOA, SOY PROTEIN CONCENTRATE*, SUNFLOWER AND/OR SOYBEAN OIL, SALT, RICE STARCH, SOY LECITHIN, MIXED TOCOPHEROLS (ANTIOXIDANT). *ORGANIC INGREDIENT",
+    "allergen_statement": { "contains_text": null, "facility_text": null },
+    "claims": {
+      "usda_organic": { "value": false, "source": "brand_page", "note": "No organic claim on brand page. Confirm on package." },
+      "non_gmo_project_verified": {
+        "value": true,
+        "source": "brand_page",
+        "note": "Product Details text (accordion, pasted by user) says Non-GMO Project Verified. The badge on the page alone only said NONGMO. Confirm seal on package."
+      },
+      "labeled_gluten_free": { "value": true, "source": "brand_page", "note": "GLUTEN-FREE badge and meta description. Confirm on package." }
+    },
+    "claims_raw": [
+      "Low glycemic* (footnote not captured)",
+      "20g* protein (footnote not captured)",
+      "Rainforest Alliance cocoa"
+    ],
+    "sources": [
+      { "type": "brand_text", "url": "https://www.clifbar.com/products/clif-builders-chocolate-peanut-butter", "retrieved": "2026-10-05", "note": "Claims and prices. Ingredients section was collapsed and not captured by fetch." },
+      { "type": "brand_text_pasted", "url": null, "retrieved": "2026-10-05", "note": "Ingredient list pasted by user from the brand page" },
+      { "type": "label_image", "url": null, "retrieved": "2026-10-05", "note": "Nutrition panel image supplied by user" },
+      { "type": "retailer_page", "url": "https://www.wholefoodsmarket.com/grocery/product/clif-bar-clif-builders-chocolate-peanut-butter-bar-6-count-2-4-ounce-b00mp1ll6e", "retrieved": "2026-10-05", "note": "Lower trust. Lacked added sugar and claims." }
+    ],
+    "verification": { "status": "draft", "verified_by_human": false, "verified_date": null, "fields_checked": [], "notes": "Pilot record. Not yet human-verified." },
+    "image": { "source": "none", "url": null },
+    "review_flags": [
+      "Whole Foods list says 'High Oleic Sunflower Oil' and 'Sea Salt'; brand list says 'Sunflower and/or Soybean Oil' and 'Salt'. Brand list used.",
+      "Whole Foods list had an undefined 'Cocoa' footnote marker.",
+      "No contains or facility statement found in any source.",
+      "UPC not yet captured."
+    ]
+  },
+  {
+    "id": "think-high-protein-creamy-peanut-butter",
+    "upc": "753656701202",
+    "brand": "think!",
+    "product_line": "High Protein",
+    "flavor": "Creamy Peanut Butter",
+    "name_variants": ["High Protein Bar, Creamy Peanut Butter"],
+    "serving": {
+      "serving_size_text": "1",
+      "serving_size_g": null,
+      "bars_per_serving": 1,
+      "bars_per_serving_inferred": true,
+      "servings_per_container": null
+    },
+    "nutrition": {
+      "calories": 230,
+      "protein_g": 20,
+      "fat_g": 8,
+      "sat_fat_g": 3.5,
+      "trans_fat_g": 0,
+      "carbs_g": 22,
+      "fiber_g": 1,
+      "sugars_g": 1,
+      "added_sugars_g": 0,
+      "sugar_alcohol_g": 11,
+      "sodium_mg": 270
+    },
+    "ingredients_text": "PROTEIN BLEND (SOY PROTEIN ISOLATE, CALCIUM CASEINATE, WHEY PROTEIN ISOLATE), MALTITOL SYRUP, VEGETABLE GLYCERIN, PEANUT BUTTER, WATER, FRACTIONATED PALM KERNEL OIL, PARTIALLY DEFATTED PEANUT FLOUR, COCOA POWDER, HIGH OLEIC SUNFLOWER OIL, NATURAL FLAVOR, SUNFLOWER AND/OR SOY LECITHIN, SALT.",
+    "allergen_statement": {
+      "contains_text": "PEANUT, MILK, AND SOY.",
+      "facility_text": "MADE IN A FACILITY THAT PROCESSES TREE NUTS, WHEAT, EGG, AND SESAME."
+    },
+    "claims": {
+      "usda_organic": { "value": false, "source": "brand_page", "note": "No organic claim on page. Confirm on package." },
+      "non_gmo_project_verified": { "value": null, "source": "none", "note": "Not mentioned on page." },
+      "labeled_gluten_free": { "value": true, "source": "brand_page", "note": "Product details list 'Gluten free'. Facility statement lists wheat." }
+    },
+    "claims_raw": ["1g sugar per bar*", "*Not a low calorie food"],
+    "sources": [
+      { "type": "brand_text", "url": "https://www.thinkproducts.com/collections/all-products/products/high-protein-bar-creamy-peanut-butter", "retrieved": "2026-10-05", "note": "Page also contains a blank duplicate nutrition table; populated table used. UPC from hidden variant data." },
+      { "type": "brand_text_pasted", "url": null, "retrieved": "2026-10-05", "note": "Nutrition, ingredients and contains statement pasted by user; identical to page" }
+    ],
+    "verification": { "status": "draft", "verified_by_human": false, "verified_date": null, "fields_checked": [], "notes": "Pilot record. Not yet human-verified." },
+    "image": { "source": "none", "url": null },
+    "review_flags": [
+      "Serving size has no unit. One bar assumed.",
+      "No nutrition label image checked; values come from page text only."
+    ]
+  }
+]

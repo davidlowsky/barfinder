@@ -1,0 +1,49 @@
+{
+  "version": "0.1",
+  "artificial_sweeteners": [
+    "sucralose", "aspartame", "acesulfame potassium", "acesulfame k", "acesulfame-k", "ace-k",
+    "saccharin", "neotame", "advantame"
+  ],
+  "sugar_alcohols": [
+    "erythritol", "xylitol", "maltitol", "sorbitol", "mannitol", "lactitol", "isomalt",
+    "hydrogenated starch hydrolysate", "hydrogenated glucose syrup", "polyglycitol"
+  ],
+  "sugar_alcohols_not_counted": ["glycerin", "glycerol"],
+  "other_sweeteners": {
+    "stevia": ["stevia", "rebaudioside", "reb a", "steviol"],
+    "monk_fruit": ["monk fruit", "luo han guo", "mogroside"]
+  },
+  "dairy": [
+    "milk", "whey", "casein", "caseinate", "lactose", "butter", "butterfat", "milkfat", "milk fat",
+    "cream", "cheese", "yogurt", "ghee", "curd", "buttermilk"
+  ],
+  "dairy_exceptions": [
+    "coconut milk", "almond milk", "oat milk", "soy milk", "rice milk", "cashew milk", "hemp milk",
+    "coconut cream", "cream of tartar",
+    "cocoa butter", "cacao butter", "peanut butter", "almond butter", "cashew butter", "hazelnut butter",
+    "macadamia butter", "pecan butter", "walnut butter", "pistachio butter", "sunflower seed butter",
+    "pumpkin seed butter", "sesame butter", "seed butter", "nut butter", "shea butter", "coconut butter",
+    "mango butter"
+  ],
+  "animal_non_dairy": [
+    "honey", "gelatin", "collagen", "egg", "albumen", "carmine", "cochineal", "shellac", "beeswax",
+    "lanolin", "fish", "anchovy"
+  ],
+  "possible_animal": [
+    "natural flavor", "vitamin d3", "cholecalciferol", "mono- and diglycerides", "mono and diglycerides"
+  ],
+  "allergens": {
+    "peanut": ["peanut"],
+    "tree_nuts": ["tree nut", "almond", "cashew", "walnut", "pecan", "pistachio", "hazelnut", "macadamia", "brazil nut", "pine nut"],
+    "soy": ["soy", "soya", "soybean", "soja"],
+    "egg": ["egg", "albumen"],
+    "wheat": ["wheat", "spelt", "kamut", "durum", "semolina", "farina"],
+    "sesame": ["sesame", "tahini"],
+    "fish": ["fish", "anchovy", "salmon", "tuna", "cod"]
+  },
+  "gluten_grains": ["wheat", "barley", "rye", "malt", "spelt", "triticale", "kamut"],
+  "seed_oils": [
+    "sunflower oil", "soybean oil", "soy oil", "canola oil", "rapeseed oil", "safflower oil",
+    "corn oil", "cottonseed oil", "grapeseed oil", "rice bran oil"
+  ]
+}

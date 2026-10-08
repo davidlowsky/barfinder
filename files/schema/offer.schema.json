@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Offer record: one purchasable pack of a bar at one retailer. Prices are approximate and dated.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "bar_id", "retailer", "url", "pack_bars", "list_price_usd", "price_date"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+    "bar_id": { "type": "string" },
+    "retailer": { "type": "string" },
+    "url": { "type": "string" },
+    "pack_bars": { "type": "integer", "minimum": 1, "description": "Total bars in this pack (e.g. 3 boxes of 10 = 30)." },
+    "list_price_usd": { "type": "number", "exclusiveMinimum": 0 },
+    "sale_price_usd": { "type": ["number", "null"], "exclusiveMinimum": 0 },
+    "subscription_price_usd": { "type": ["number", "null"], "exclusiveMinimum": 0 },
+    "price_date": { "type": "string", "format": "date" },
+    "shipping_included": { "type": "boolean" },
+    "note": { "type": ["string", "null"] }
+  }
+}

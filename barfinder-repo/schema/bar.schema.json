@@ -1,0 +1,417 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Bar record (one per flavor). Source facts only; derived tags are computed by validate.py.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "brand",
+    "product_line",
+    "flavor",
+    "serving",
+    "nutrition",
+    "ingredients_text",
+    "allergen_statement",
+    "claims",
+    "sources",
+    "verification"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "upc": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[0-9]{12}$",
+      "description": "Retail-unit UPC-A. Null if not yet captured."
+    },
+    "brand": {
+      "type": "string",
+      "minLength": 1
+    },
+    "product_line": {
+      "type": "string",
+      "minLength": 1
+    },
+    "flavor": {
+      "type": "string",
+      "minLength": 1
+    },
+    "name_variants": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Other names seen in sources, for matching."
+    },
+    "serving": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "serving_size_text",
+        "bars_per_serving",
+        "bars_per_serving_inferred"
+      ],
+      "properties": {
+        "serving_size_text": {
+          "type": "string",
+          "description": "Exactly as printed, e.g. '1 Bar (56g)' or '1'."
+        },
+        "serving_size_g": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "exclusiveMinimum": 0
+        },
+        "bars_per_serving": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "bars_per_serving_inferred": {
+          "type": "boolean",
+          "description": "True when the label gives no unit and one bar was assumed."
+        },
+        "servings_per_container": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        }
+      }
+    },
+    "nutrition": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Per serving, as printed. null = not reported on the source (never use 0 for unknown). sugar_alcohol_g null = no sugar alcohol line on the label.",
+      "required": [
+        "calories",
+        "protein_g",
+        "fat_g",
+        "carbs_g",
+        "fiber_g",
+        "sugars_g",
+        "sodium_mg"
+      ],
+      "properties": {
+        "calories": {
+          "type": "number",
+          "minimum": 0
+        },
+        "protein_g": {
+          "type": "number",
+          "minimum": 0
+        },
+        "fat_g": {
+          "type": "number",
+          "minimum": 0
+        },
+        "sat_fat_g": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "trans_fat_g": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "carbs_g": {
+          "type": "number",
+          "minimum": 0
+        },
+        "fiber_g": {
+          "type": "number",
+          "minimum": 0
+        },
+        "sugars_g": {
+          "type": "number",
+          "minimum": 0
+        },
+        "added_sugars_g": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "sugar_alcohol_g": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "sodium_mg": {
+          "type": "number",
+          "minimum": 0
+        },
+        "less_than": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "calories",
+              "protein_g",
+              "fat_g",
+              "sat_fat_g",
+              "carbs_g",
+              "fiber_g",
+              "sugars_g",
+              "added_sugars_g",
+              "sugar_alcohol_g",
+              "sodium_mg"
+            ]
+          },
+          "description": "Fields the label prints as '<X' (e.g. 'Total Sugars <1g'). The stored value is the printed bound X, so the true value is below it."
+        }
+      }
+    },
+    "ingredients_text": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Verbatim from the best source."
+    },
+    "allergen_statement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contains_text",
+        "facility_text"
+      ],
+      "properties": {
+        "contains_text": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Verbatim 'Contains:' line, null if none found."
+        },
+        "facility_text": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Verbatim facility / 'may contain' line, null if none found."
+        }
+      }
+    },
+    "claims": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "usda_organic",
+        "non_gmo_project_verified",
+        "labeled_gluten_free"
+      ],
+      "properties": {
+        "usda_organic": {
+          "$ref": "#/$defs/claim"
+        },
+        "non_gmo_project_verified": {
+          "$ref": "#/$defs/claim"
+        },
+        "labeled_gluten_free": {
+          "$ref": "#/$defs/claim"
+        }
+      }
+    },
+    "claims_raw": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Other marketing claims, recorded but never used as filters."
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "type",
+          "retrieved"
+        ],
+        "properties": {
+          "type": {
+            "enum": [
+              "brand_text",
+              "brand_text_pasted",
+              "retailer_page",
+              "label_image",
+              "package_photo"
+            ]
+          },
+          "url": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "retrieved": {
+            "type": "string",
+            "format": "date"
+          },
+          "note": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "verification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "verified_by_human",
+        "verified_date",
+        "fields_checked"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "draft",
+            "needs_review",
+            "verified"
+          ]
+        },
+        "verified_by_human": {
+          "type": "boolean"
+        },
+        "verified_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "fields_checked": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "image": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source",
+        "url"
+      ],
+      "properties": {
+        "source": {
+          "enum": [
+            "none",
+            "own",
+            "licensed"
+          ]
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "review_flags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Open issues to resolve before marking verified."
+    },
+    "whole_foods": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "checked"
+      ],
+      "description": "Whether the owner saw this flavor at Whole Foods. Missing or 'unknown' means not checked.",
+      "properties": {
+        "status": {
+          "enum": [
+            "carried",
+            "not_found",
+            "unknown"
+          ]
+        },
+        "checked": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "availability": {
+      "enum": [
+        "regular",
+        "seasonal",
+        "limited"
+      ],
+      "description": "seasonal = comes back each year; limited = limited run. Missing means regular. Shown as a tag on the site."
+    }
+  },
+  "$defs": {
+    "claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "source"
+      ],
+      "properties": {
+        "value": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "true/false per the definition in DECISIONS.md; null = unknown."
+        },
+        "source": {
+          "enum": [
+            "package_photo",
+            "brand_page",
+            "retailer_page",
+            "none"
+          ]
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    }
+  }
+}

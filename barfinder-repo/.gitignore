@@ -1,0 +1,10 @@
+# generated, never commit
+public/
+site/
+site_review/
+preview.html
+review.html
+verify/
+__pycache__/
+*.pyc
+.DS_Store

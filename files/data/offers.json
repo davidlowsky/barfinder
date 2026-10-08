@@ -1,0 +1,67 @@
+[
+  {
+    "id": "aloha-direct-12",
+    "bar_id": "aloha-chocolate-chip-cookie-dough",
+    "retailer": "aloha.com",
+    "url": "https://aloha.com/products/chocolate-chip-cookie-dough-protein-bar",
+    "pack_bars": 12,
+    "list_price_usd": 34.99,
+    "sale_price_usd": null,
+    "subscription_price_usd": null,
+    "price_date": "2026-10-05",
+    "shipping_included": false,
+    "note": "Autoship discounts of 10 to 25% exist but no subscription price is shown."
+  },
+  {
+    "id": "clif-direct-12",
+    "bar_id": "clif-builders-chocolate-peanut-butter",
+    "retailer": "clifbar.com",
+    "url": "https://www.clifbar.com/products/clif-builders-chocolate-peanut-butter",
+    "pack_bars": 12,
+    "list_price_usd": 22.9,
+    "sale_price_usd": null,
+    "subscription_price_usd": null,
+    "price_date": "2026-10-05",
+    "shipping_included": false,
+    "note": "Page shows 12 Bars selected. Subscribe and Save 15% advertised without a price."
+  },
+  {
+    "id": "clif-direct-24",
+    "bar_id": "clif-builders-chocolate-peanut-butter",
+    "retailer": "clifbar.com",
+    "url": "https://www.clifbar.com/products/clif-builders-chocolate-peanut-butter-protein-bar-36ct-bundle",
+    "pack_bars": 24,
+    "list_price_usd": 50.88,
+    "sale_price_usd": 43.5,
+    "subscription_price_usd": null,
+    "price_date": "2026-10-05",
+    "shipping_included": false,
+    "note": "Bundle page URL slug says 36ct but the listing is titled 24 Bars. Confirm."
+  },
+  {
+    "id": "think-direct-10",
+    "bar_id": "think-high-protein-creamy-peanut-butter",
+    "retailer": "thinkproducts.com",
+    "url": "https://www.thinkproducts.com/products/high-protein-bar-creamy-peanut-butter",
+    "pack_bars": 10,
+    "list_price_usd": 23.99,
+    "sale_price_usd": null,
+    "subscription_price_usd": 21.59,
+    "price_date": "2026-10-05",
+    "shipping_included": false,
+    "note": "Free shipping over $69."
+  },
+  {
+    "id": "think-direct-120",
+    "bar_id": "think-high-protein-creamy-peanut-butter",
+    "retailer": "thinkproducts.com",
+    "url": "https://www.thinkproducts.com/products/high-protein-bar-creamy-peanut-butter",
+    "pack_bars": 120,
+    "list_price_usd": 263.88,
+    "sale_price_usd": null,
+    "subscription_price_usd": 237.49,
+    "price_date": "2026-10-05",
+    "shipping_included": false,
+    "note": "12 boxes of 10."
+  }
+]
